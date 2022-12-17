@@ -6,3 +6,5 @@ Screenshot*
 
 ./terraform-easy/terraform.tfstate
 ./terraform-easy/terraform.tfstate.backup
+.terraform.lock.hcl
+.gitignore

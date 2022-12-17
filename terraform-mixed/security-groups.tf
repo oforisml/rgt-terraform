@@ -2,24 +2,24 @@ resource "aws_security_group" "samuel-ofori-tf-sec-group" {
   vpc_id = aws_vpc.samuel-ofori-tf-vpc.id
   
   ingress {
-    from_port   = 22
-    to_port     = 22
+    from_port   = var.ssh
+    to_port     = var.ssh
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = var.pub_cidr
   }
 
   ingress {
-    from_port   = 80
-    to_port     = 80
+    from_port   = var.http
+    to_port     = var.http
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = var.pub_cidr
   }
 
   egress {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = var.pub_cidr
   }
 
   tags = {

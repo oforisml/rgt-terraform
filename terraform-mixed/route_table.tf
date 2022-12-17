@@ -18,16 +18,15 @@ resource "aws_route_table" "samuel-ofori-tf-route-table" {
 }
 
 
-resource "aws_route_table_association" "samuel-ofori-assoc-1" {
-  subnet_id      = aws_subnet.samuel-ofori-subnet-tf-1.id
-  route_table_id = aws_route_table.samuel-ofori-tf-route-table.id
-
-
+resource "aws_route_table_association" "samuel-ofori-assoc" {
+    count = 2
+    subnet_id      = "${var.subnet_name[count.index]}.id"
+    route_table_id = aws_route_table.samuel-ofori-tf-route-table.id
 }
 
-resource "aws_route_table_association" "samuel-ofori-assoc-2" {
-  subnet_id      = aws_subnet.samuel-ofori-subnet-tf-2.id
-  route_table_id = aws_route_table.samuel-ofori-tf-route-table.id
+# resource "aws_route_table_association" "samuel-ofori-assoc-2" {
+#   subnet_id      = aws_subnet.samuel-ofori-subnet-tf-2.id
+#   route_table_id = aws_route_table.samuel-ofori-tf-route-table.id
 
 
-}
+# }

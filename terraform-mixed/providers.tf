@@ -9,6 +9,7 @@ terraform {
     bucket = "samuel-ofori-tf-s3-backend"
     key = "rgt/terraform/key"
     region = "us-east-2"
+    
   }
 }
 provider "aws" {
