@@ -20,11 +20,6 @@ variable "availability_zone" {
   default = ["us-east-2a", "us-east-2b"]
 }
 
-# variable "subnet_name" {
-#   type = list
-#   default = [aws_subnet.samuel-ofori-tf-[0], aws_subnet.samuel-ofori-tf-[1]]
-# }
-
 variable "pub_cidr" {
     type = list
     default = ["0.0.0.0/0"]  

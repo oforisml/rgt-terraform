@@ -23,10 +23,3 @@ resource "aws_route_table_association" "samuel-ofori-assoc" {
     subnet_id      = aws_subnet.samuel-ofori-subnet-tf-.*.id[count.index]
     route_table_id = aws_route_table.samuel-ofori-tf-route-table.id
 }
-
-# resource "aws_route_table_association" "samuel-ofori-assoc-2" {
-#   subnet_id      = aws_subnet.samuel-ofori-subnet-tf-2.id
-#   route_table_id = aws_route_table.samuel-ofori-tf-route-table.id
-
-
-# }

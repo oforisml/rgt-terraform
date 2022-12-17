@@ -11,25 +11,13 @@ resource "aws_lb_target_group" "samuel-ofori-tf-subnet-tg" {
     bootcamp        = "ghana1"
     expiration_date = "28-02-23"
   }
-
 }
-
-
 
 resource "aws_lb_target_group_attachment" "samuel-ofori-tf-load-balancer-attachment" {
   count = 2
   target_group_arn = aws_lb_target_group.samuel-ofori-tf-subnet-tg.arn
   target_id        = "${aws_instance.samuel-ofori-tf[count.index]}".id
 }
-
-
-# resource "aws_lb_target_group_attachment" "samuel-ofori-tf-load-balancer-attachment2" {
-#   target_group_arn = aws_lb_target_group.samuel-ofori-tf-subnet-tg.arn
-#   target_id        = aws_instance.samuel-ofori-tf-2.id
-
-
-# }
-
 
 resource "aws_lb" "samuel-ofori-tf-load-balancer" {
   # resource "aws_alb" "samuel-ofori-tf-load-balancer" {
