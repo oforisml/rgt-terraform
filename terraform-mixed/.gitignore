@@ -1,0 +1,8 @@
+Screenshot*
+*.zip
+*.backup
+*.tfstate
+*.terraform
+
+./terraform-easy/terraform.tfstate
+./terraform-easy/terraform.tfstate.backup
