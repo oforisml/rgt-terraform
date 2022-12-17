@@ -2,12 +2,12 @@ resource "aws_instance" "samuel-ofori-tf" {
   count = 2
   ami = var.ami
   instance_type = var.instance_type
-  subnet_id = "${var.subnet_name[count.index]}.id"
+  subnet_id = aws_subnet.samuel-ofori-subnet-tf-.*.id[count.index]
   
   vpc_security_group_ids = [aws_security_group.samuel-ofori-tf-sec-group.id]
   associate_public_ip_address = true
   tags = {
-    Name            = "samuel-ofori-tf-instance1"
+    Name            = "samuel-ofori-tf-instance${count.index}"
     owner           = "Samuel Ofori"
     bootcamp        = "ghana1"
     expiration_date = "28-02-23"

@@ -20,7 +20,7 @@ resource "aws_route_table" "samuel-ofori-tf-route-table" {
 
 resource "aws_route_table_association" "samuel-ofori-assoc" {
     count = 2
-    subnet_id      = "${var.subnet_name[count.index]}.id"
+    subnet_id      = aws_subnet.samuel-ofori-subnet-tf-.*.id[count.index]
     route_table_id = aws_route_table.samuel-ofori-tf-route-table.id
 }
 

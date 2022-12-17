@@ -36,8 +36,8 @@ resource "aws_lb" "samuel-ofori-tf-load-balancer" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.samuel-ofori-tf-sec-group.id]
-  subnets            = ["${var.subnet_name[0]}.id","${var.subnet_name[1]}.id"]
-  # subnets            = [aws_subnet.samuel-ofori-subnet-tf-1.id, aws_subnet.samuel-ofori-subnet-tf-2.id]
+  
+  subnets            = [aws_subnet.samuel-ofori-subnet-tf-[1].id, aws_subnet.samuel-ofori-subnet-tf-[0].id]
   enable_deletion_protection = true
   tags = {
     Name            = "samuel-ofori-tf-load-balancer"
