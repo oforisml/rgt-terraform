@@ -3,7 +3,7 @@ resource "aws_lb_target_group" "samuel-ofori-tf-subnet-tg" {
   port     = 80
   protocol = "HTTP"
   # target_type = "ip"
-  vpc_id = aws_vpc.samuel-ofori-tf-vpc.id
+  vpc_id = var.output_vpc
 
   tags = {
     Name            = "samuel-ofori-tf-subnet-tg"
