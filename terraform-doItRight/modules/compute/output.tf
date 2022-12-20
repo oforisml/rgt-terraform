@@ -1,4 +1,4 @@
-output "output_vpc" {
-    value = aws_vpc.samuel-ofori-tf-vpc.id
+output "output_instances" {
+    value = [for instance in aws_instance.samuel-ofori-tf:instance.id]
     description = "VPC ids"
 }

@@ -13,7 +13,6 @@ variable "instance_type" {
 
 
 
-
 ### NETWORK VARIABLES
 variable "subnet" {
     type = list
@@ -38,4 +37,37 @@ variable "http" {
 variable "ssh" {
     type = number
     default = 22
+}
+
+# variable "vpc" {
+#     type = string
+# }
+
+
+variable "load_balancer_type"{
+    type = string
+}
+
+variable "security_group_protocol"{
+    type = string
+}
+
+variable "enable_dns_support" {
+    type = bool
+}
+
+variable "enable_dns_hostnames"{
+    type = bool
+}
+
+variable "instance_tenancy"{
+    type = string
+}
+
+variable "private_cidr"{
+    type = list
+}
+
+variable "http_protocol" {
+  type = string
 }

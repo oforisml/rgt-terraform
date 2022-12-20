@@ -1,10 +1,10 @@
 resource "aws_route_table" "samuel-ofori-tf-route-table" {
   // Linking a route table to a subnet
-  vpc_id = var.output_vpc
+  vpc_id = aws_vpc.samuel-ofori-tf-vpc.id
 
   // Creating route
   route {
-    cidr_block = "0.0.0.0/0"
+    cidr_block = var.pub_cidr[0]
     gateway_id = aws_internet_gateway.samuel-ofori-internet-tf-gateway.id
   }
 

@@ -1,6 +1,6 @@
 resource "aws_subnet" "samuel-ofori-subnet-tf-" {
   count             = 2
-  vpc_id            = var.output_vpc
+  vpc_id            = aws_vpc.samuel-ofori-tf-vpc.id
   cidr_block        = var.subnet[count.index]
   availability_zone = var.availability_zone[count.index]
 

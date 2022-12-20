@@ -1,8 +1,8 @@
 resource "aws_vpc" "samuel-ofori-tf-vpc" {
-  cidr_block           = "10.0.0.0/16"
-  enable_dns_support   = "true"
-  enable_dns_hostnames = "true"
-  instance_tenancy     = "default"
+  cidr_block           = var.private_cidr[0]
+  enable_dns_support   = var.enable_dns_support
+  enable_dns_hostnames = var.enable_dns_hostnames
+  instance_tenancy     = var.instance_tenancy
 
   tags = {
     Name            = "samuel-ofori-vpc"

@@ -1,17 +1,17 @@
 resource "aws_security_group" "samuel-ofori-tf-sec-group" {
-  vpc_id = var.output_vpc
+  vpc_id = aws_vpc.samuel-ofori-tf-vpc.id
   
   ingress {
     from_port   = var.ssh
     to_port     = var.ssh
-    protocol    = "tcp"
+    protocol    = var.security_group_protocol
     cidr_blocks = var.pub_cidr
   }
 
   ingress {
     from_port   = var.http
     to_port     = var.http
-    protocol    = "tcp"
+    protocol    = var.security_group_protocol
     cidr_blocks = var.pub_cidr
   }
 
